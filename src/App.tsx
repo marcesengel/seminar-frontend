@@ -1,14 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { CounterDisplay } from 'components/CounterDisplay/CounterDisplay'
-import { ControlPanel } from 'components/ControlPanel/ControlPanel'
-
 export default (): JSX.Element => (
   <Wrapper>
-    <CounterDisplay />
-
-    <ControlPanel />
   </Wrapper>
 )
 
