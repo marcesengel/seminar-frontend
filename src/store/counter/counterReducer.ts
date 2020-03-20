@@ -13,6 +13,9 @@ const reducer: Reducer<State, Action> = (state = defaultState, action) => {
     case ActionType.Decrement:
       return { count: state.count - 1 }
     
+    case ActionType.Reset:
+      return { count: 0 } 
+    
     default:
       return state
   }

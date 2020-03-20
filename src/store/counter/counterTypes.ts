@@ -4,7 +4,8 @@ export interface State {
 
 export enum ActionType {
   Increment = 'COUNTER/INCREMENT',
-  Decrement = 'COUNTER/DECREMENT'
+  Decrement = 'COUNTER/DECREMENT',
+  Reset = 'COUNTER/RESET'
 }
 
 export interface IncrementAction {
@@ -15,4 +16,8 @@ export interface DecrementAction {
   type: ActionType.Decrement;
 }
 
-export type Action = IncrementAction | DecrementAction;
+export interface ResetAction {
+  type: ActionType.Reset;
+}
+
+export type Action = IncrementAction | DecrementAction | ResetAction;

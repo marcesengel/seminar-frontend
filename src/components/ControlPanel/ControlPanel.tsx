@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import styled from 'styled-components'
 
 import { useDispatch } from 'react-redux'
-import { increment, decrement } from 'store/counter/counterActions'
+import { increment, decrement, reset } from 'store/counter/counterActions'
 
 export const ControlPanel = (): JSX.Element => {
   const dispatch = useDispatch()
@@ -13,11 +13,16 @@ export const ControlPanel = (): JSX.Element => {
   const handleDecrementClick = useCallback(() => {
     dispatch(decrement())
   }, [ dispatch ])
+  const handleResetClick = useCallback(() => {
+    dispatch(reset())
+  }, [ dispatch ])
 
   return (
     <Wrapper>
       <Button onClick={handleDecrementClick}> - </Button>
   
+      <Button onClick={handleResetClick}> Reset </Button>
+
       <Button onClick={handleIncrementClick}> + </Button>
     </Wrapper>
   )
