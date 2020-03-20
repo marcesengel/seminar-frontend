@@ -2,7 +2,7 @@ import { ActionType, Action, State } from './todoTypes'
 import { Reducer } from 'redux'
 import produce from 'immer'
 
-const reducer: Reducer<State['entities'], Action> = (state = {}, action) => {
+export const entitiesReducer: Reducer<State['entities'], Action> = (state = {}, action) => {
   switch(action.type) {
     case ActionType.Fetch:
       const entities: State['entities'] = {}
@@ -22,5 +22,3 @@ const reducer: Reducer<State['entities'], Action> = (state = {}, action) => {
       return state
   }
 }
-
-export default reducer

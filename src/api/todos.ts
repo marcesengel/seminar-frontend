@@ -10,7 +10,7 @@ export const fetchTodos = (): Promise<Todo[]> =>
     .then((response) => response.data)
     .then((todos) => todos.map(buildTodo))
 
-type TodoData = Omit<Todo, 'id' | 'createdAt'>;
+export type TodoData = Omit<Todo, 'id' | 'createdAt'>;
 export const createTodo = (data: TodoData): Promise<Todo> =>
   axios.post<TodoResponse>('http://localhost:3000/todos', data)
     .then((response) => response.data)
