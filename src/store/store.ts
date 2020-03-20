@@ -1,8 +1,10 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import counterReducer from './counter/counterReducer'
 import { createLogger } from 'redux-logger'
 
-const rootReducer = counterReducer
+const rootReducer = combineReducers({
+  counter: counterReducer
+})
 export type RootState = ReturnType<typeof rootReducer>;
 
 export default createStore(rootReducer, applyMiddleware(
