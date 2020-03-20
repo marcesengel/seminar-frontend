@@ -1,31 +1,29 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import { useDispatch } from 'react-redux'
 import { increment, decrement, reset } from 'store/counter/counterActions'
+import { useActions } from 'store/useActions'
 
 export const ControlPanel = (): JSX.Element => {
-  const dispatch = useDispatch()
-  
-  const handleIncrementClick = useCallback(() => {
-    dispatch(increment())
-  }, [ dispatch ])
-  const handleDecrementClick = useCallback(() => {
-    dispatch(decrement())
-  }, [ dispatch ])
-  const handleResetClick = useCallback(() => {
-    dispatch(reset())
-  }, [ dispatch ])
+  const {
+    increment,
+    decrement,
+    reset
+  } = useActions(actions)
 
   return (
     <Wrapper>
-      <Button onClick={handleDecrementClick}> - </Button>
-  
-      <Button onClick={handleResetClick}> Reset </Button>
-
-      <Button onClick={handleIncrementClick}> + </Button>
+      <Button onClick={decrement}> - </Button>
+      <Button onClick={reset}> Reset </Button>
+      <Button onClick={increment}> + </Button>
     </Wrapper>
   )
+}
+
+const actions = {
+  increment,
+  decrement,
+  reset
 }
 
 const Wrapper = styled.div`
