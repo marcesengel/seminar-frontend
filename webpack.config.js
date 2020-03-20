@@ -11,6 +11,7 @@ module.exports = {
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
+    modules: [ 'src', 'node_modules' ]
   },
   module: {
     rules: [ {
