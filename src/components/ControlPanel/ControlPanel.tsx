@@ -1,10 +1,17 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
 
+import { useDispatch } from 'react-redux'
+import { increment, decrement } from 'store/counter/counterActions'
+
 export const ControlPanel = (): JSX.Element => {
+  const dispatch = useDispatch()
+  
   const handleIncrementClick = useCallback(() => {
+    dispatch(increment())
   }, [ ])
   const handleDecrementClick = useCallback(() => {
+    dispatch(decrement())
   }, [ ])
 
   return (
