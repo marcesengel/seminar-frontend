@@ -9,10 +9,10 @@ export const ControlPanel = (): JSX.Element => {
   
   const handleIncrementClick = useCallback(() => {
     dispatch(increment())
-  }, [ ])
+  }, [ dispatch ])
   const handleDecrementClick = useCallback(() => {
     dispatch(decrement())
-  }, [ ])
+  }, [ dispatch ])
 
   return (
     <Wrapper>
